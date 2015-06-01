@@ -1,9 +1,12 @@
 package au.com.kbrsolutions.myappportfolio;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +14,59 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                showMessage(getString(R.string.spotifyClickMsg));
+//                        spotifyClicked();
+            }
+        });
+
+        button = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                showMessage(getString(R.string.scoresClickMsg));
+            }
+        });
+
+        button = (Button) findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                showMessage(getString(R.string.libraryClickMsg));
+            }
+        });
+
+        button = (Button) findViewById(R.id.button4);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                showMessage(getString(R.string.buildClickMsg));
+            }
+        });
+
+        button = (Button) findViewById(R.id.button5);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                showMessage(getString(R.string.backonClickMsg));
+            }
+        });
+
+        button = (Button) findViewById(R.id.button6);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                showMessage(getString(R.string.capstoneClickMsg));
+            }
+        });
+    }
+
+    public void showMessage(String message) {
+        Toast.makeText(getApplicationContext(), getString(R.string.buttonClickMsg, message), Toast.LENGTH_SHORT).show();
     }
 
     @Override
