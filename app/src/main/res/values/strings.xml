@@ -5,7 +5,7 @@
 
     <!-- layout/activity_main.xml -->
     <string name="my_title">My Nanodegree Apps!</string>
-    <string name="media_streamer">SPOTIFY STREAMER</string>
+    <string name="spotify_streamer">SPOTIFY STREAMER</string>
     <string name="super_duo1">SCORES APP</string>
     <string name="super_duo2">LIBRARY APP</string>
     <string name="ant_terminator">BUILD IT BIGGER</string>

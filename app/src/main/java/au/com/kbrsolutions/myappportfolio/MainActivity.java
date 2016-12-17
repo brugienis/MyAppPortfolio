@@ -1,7 +1,9 @@
 package au.com.kbrsolutions.myappportfolio;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 showMessage(getString(R.string.spotifyClickMsg));
+                startApp(v);
 //                        spotifyClicked();
             }
         });
@@ -67,6 +70,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void showMessage(String message) {
         Toast.makeText(getApplicationContext(), getString(R.string.buttonClickMsg, message), Toast.LENGTH_SHORT).show();
+    }
+
+    private void startApp(View view) {Button button = (Button) view;
+        String buttonText = (String) button.getText();
+        Log.v("MainActivity", "startApp - buttonText: " + buttonText);
+        if (buttonText.equals(getString(R.string.spotify_streamer))) {
+            Log.v("MainActivity", "startApp - before start");
+//            Intent callIntent = new Intent("au.com.kbrsolutions.spotifystreamer");
+            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.spotifystreamer");
+            startActivity(callIntent);
+            Log.v("MainActivity", "startApp - after  start");
+        }
     }
 
     @Override
