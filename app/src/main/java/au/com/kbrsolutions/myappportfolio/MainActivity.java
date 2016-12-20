@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 showMessage(getString(R.string.buildClickMsg));
+                startApp(v);
             }
         });
 
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 showMessage(getString(R.string.capstoneClickMsg));
+                startApp(v);
             }
         });
     }
@@ -72,15 +74,28 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), getString(R.string.buttonClickMsg, message), Toast.LENGTH_SHORT).show();
     }
 
-    private void startApp(View view) {Button button = (Button) view;
+    private void startApp(View view) {
+        Button button = (Button) view;
         String buttonText = (String) button.getText();
         Log.v("MainActivity", "startApp - buttonText: " + buttonText);
         if (buttonText.equals(getString(R.string.spotify_streamer))) {
-            Log.v("MainActivity", "startApp - before start");
-//            Intent callIntent = new Intent("au.com.kbrsolutions.spotifystreamer");
             Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.spotifystreamer");
+            Log.v("MainActivity", "startApp - before start - callIntent: " + callIntent);
             startActivity(callIntent);
             Log.v("MainActivity", "startApp - after  start");
+        } else if (buttonText.equals(getString(R.string.build_it_bigger))) {
+//            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.builditbigger");
+            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.builditbigger");
+            Log.v("MainActivity", "startApp - before start builditbigger - callIntent: " + callIntent);
+            if (callIntent != null) {
+                startActivity(callIntent);
+            }
+            Log.v("MainActivity", "startApp - after  start builditbigger");
+        } else if (buttonText.equals(getString(R.string.capstone))) {
+            Log.v("MainActivity", "startApp - before start capstone");
+            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.melbournepublictransport");
+            startActivity(callIntent);
+            Log.v("MainActivity", "startApp - after  start capstone");
         }
     }
 
