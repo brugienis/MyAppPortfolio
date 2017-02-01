@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             Log.v("MainActivity", "startApp - after  start");
         } else if (buttonText.equals(getString(R.string.build_it_bigger))) {
 //            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.builditbigger");
-            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.builditbigger");
+            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.builditbigger.paid");
             Log.v("MainActivity", "startApp - before start builditbigger - callIntent: " + callIntent);
             if (callIntent != null) {
                 startActivity(callIntent);
