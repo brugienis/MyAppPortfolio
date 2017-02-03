@@ -18,43 +18,52 @@
         android:id="@+id/textView"/>
 
     <Button
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/spotify_streamer"
-        android:id="@+id/button"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="@dimen/buttons_left_margin"
         android:layout_marginRight="@dimen/buttons_right_margin"
+        android:layout_marginStart="@dimen/buttons_left_margin"
+        android:layout_marginEnd="@dimen/buttons_right_margin"
         android:background="@color/button_background"
-        android:textColor="@color/button_text" />
+        android:textColor="@color/button_text"
+        android:onClick="startApp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/super_duo1"
+        android:text="@string/super_duo_scores"
         android:id="@+id/button2"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="@dimen/buttons_left_margin"
         android:layout_marginRight="@dimen/buttons_right_margin"
+        android:layout_marginStart="@dimen/buttons_left_margin"
+        android:layout_marginEnd="@dimen/buttons_right_margin"
         android:background="@color/button_background"
-        android:textColor="@color/button_text" />
+        android:textColor="@color/button_text"
+        android:onClick="startApp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/super_duo2"
+        android:text="@string/super_duo_library"
         android:id="@+id/button3"
         android:layout_below="@+id/button2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="@dimen/buttons_left_margin"
         android:layout_marginRight="@dimen/buttons_right_margin"
+        android:layout_marginStart="@dimen/buttons_left_margin"
+        android:layout_marginEnd="@dimen/buttons_right_margin"
         android:background="@color/button_background"
-        android:textColor="@color/button_text" />
+        android:textColor="@color/button_text"
+        android:onClick="startApp" />
 
     <Button
         android:layout_width="match_parent"
@@ -66,21 +75,27 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="@dimen/buttons_left_margin"
         android:layout_marginRight="@dimen/buttons_right_margin"
+        android:layout_marginStart="@dimen/buttons_left_margin"
+        android:layout_marginEnd="@dimen/buttons_right_margin"
         android:background="@color/button_background"
-        android:textColor="@color/button_text" />
+        android:textColor="@color/button_text"
+        android:onClick="startApp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/materialize"
+        android:text="@string/xyz_reader"
         android:id="@+id/button5"
         android:layout_below="@+id/button4"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="@dimen/buttons_left_margin"
         android:layout_marginRight="@dimen/buttons_right_margin"
+        android:layout_marginStart="@dimen/buttons_left_margin"
+        android:layout_marginEnd="@dimen/buttons_right_margin"
         android:background="@color/button_background"
-        android:textColor="@color/button_text" />
+        android:textColor="@color/button_text"
+        android:onClick="startApp" />
 
     <Button
         android:layout_width="match_parent"
@@ -92,7 +107,10 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="@dimen/buttons_left_margin"
         android:layout_marginRight="@dimen/buttons_right_margin"
+        android:layout_marginStart="@dimen/buttons_left_margin"
+        android:layout_marginEnd="@dimen/buttons_right_margin"
         android:background="@color/button_background"
-        android:textColor="@color/button_text" />
+        android:textColor="@color/button_text"
+        android:onClick="startApp" />
 
 </RelativeLayout>

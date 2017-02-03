@@ -3,7 +3,6 @@ package au.com.kbrsolutions.myappportfolio;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,90 +11,62 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final static String PACKAGE_SPOTIFY_STREAMER =
+            "au.com.kbrsolutions.spotifystreamer";
+    private final static String PACKAGE_BUILD_IT_BIGGER =
+            "au.com.kbrsolutions.builditbigger.paid";
+    private final static String PACKAGE_MELBOURNE_PUBLIC_TRANSPORT =
+            "au.com.kbrsolutions.melbournepublictransport";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                showMessage(getString(R.string.spotifyClickMsg));
-                startApp(v);
-//                        spotifyClicked();
-            }
-        });
-
-        button = (Button) findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                showMessage(getString(R.string.scoresClickMsg));
-            }
-        });
-
-        button = (Button) findViewById(R.id.button3);
-        button.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                showMessage(getString(R.string.libraryClickMsg));
-            }
-        });
-
-        button = (Button) findViewById(R.id.button4);
-        button.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                showMessage(getString(R.string.buildClickMsg));
-                startApp(v);
-            }
-        });
-
-        button = (Button) findViewById(R.id.button5);
-        button.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                showMessage(getString(R.string.backonClickMsg));
-            }
-        });
-
-        button = (Button) findViewById(R.id.button6);
-        button.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                showMessage(getString(R.string.capstoneClickMsg));
-                startApp(v);
-            }
-        });
     }
 
-    public void showMessage(String message) {
-        Toast.makeText(getApplicationContext(), getString(R.string.buttonClickMsg, message), Toast.LENGTH_SHORT).show();
+    /**
+     *
+     * Show Toast with the the message indicating which app will be launched.
+     *
+     * @param message   The text to show.  Can be formatted text.
+     *
+     */
+    private void showMessage(String message) {
+        Toast.makeText(getApplicationContext(),
+                getString(R.string.buttonClickMsg, message), Toast.LENGTH_SHORT).show();
     }
 
-    private void startApp(View view) {
+    /**
+     *
+     * Launch the an app depending on which button was clicked.
+     *
+     * @param view  Clicked button view.
+     *
+     */
+    public void startApp(View view) {
         Button button = (Button) view;
         String buttonText = (String) button.getText();
-        Log.v("MainActivity", "startApp - buttonText: " + buttonText);
         if (buttonText.equals(getString(R.string.spotify_streamer))) {
-            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.spotifystreamer");
-            Log.v("MainActivity", "startApp - before start - callIntent: " + callIntent);
+            Intent callIntent = getPackageManager().getLaunchIntentForPackage
+                    (PACKAGE_SPOTIFY_STREAMER);
             startActivity(callIntent);
-            Log.v("MainActivity", "startApp - after  start");
-        } else if (buttonText.equals(getString(R.string.build_it_bigger))) {
-//            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.builditbigger");
-            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.builditbigger.paid");
-            Log.v("MainActivity", "startApp - before start builditbigger - callIntent: " + callIntent);
-            if (callIntent != null) {
+        } else if (buttonText.equals(getString(R.string.super_duo_scores))) {
+            showMessage(buttonText);
+        } else if (buttonText.equals(getString(R.string.super_duo_library))) {
+            showMessage(buttonText);
+        }
+        else if (buttonText.equals(getString(R.string.build_it_bigger))) {
+                Intent callIntent = getPackageManager().getLaunchIntentForPackage
+                        (PACKAGE_BUILD_IT_BIGGER);
+                if (callIntent != null) {
                 startActivity(callIntent);
             }
-            Log.v("MainActivity", "startApp - after  start builditbigger");
+        } else if (buttonText.equals(getString(R.string.xyz_reader))) {
+            showMessage(buttonText);
         } else if (buttonText.equals(getString(R.string.capstone))) {
-            Log.v("MainActivity", "startApp - before start capstone");
-            Intent callIntent = getPackageManager().getLaunchIntentForPackage("au.com.kbrsolutions.melbournepublictransport");
+            Intent callIntent = getPackageManager().getLaunchIntentForPackage
+                    (PACKAGE_MELBOURNE_PUBLIC_TRANSPORT);
             startActivity(callIntent);
-            Log.v("MainActivity", "startApp - after  start capstone");
         }
     }
 

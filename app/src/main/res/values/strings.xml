@@ -6,18 +6,12 @@
     <!-- layout/activity_main.xml -->
     <string name="my_title">My Nanodegree Apps!</string>
     <string name="spotify_streamer">SPOTIFY STREAMER</string>
-    <string name="super_duo1">SCORES APP</string>
-    <string name="super_duo2">LIBRARY APP</string>
+    <string name="super_duo_scores">SCORES</string>
+    <string name="super_duo_library">LIBRARY</string>
     <string name="build_it_bigger">BUILD IT BIGGER</string>
-    <string name="materialize">BACKON READER</string>
+    <string name="xyz_reader">XYZ READER</string>
     <string name="capstone">CAPSTONE: MY OWN APP</string>
 
     <!-- MainActivity -->
     <string name="buttonClickMsg">This button will launch my %1$s App</string>
-    <string name="spotifyClickMsg">Spotify Streamer</string>
-    <string name="scoresClickMsg">Scores</string>
-    <string name="libraryClickMsg">Library</string>
-    <string name="buildClickMsg">Build It Bigger</string>
-    <string name="backonClickMsg">Bacon Reader</string>
-    <string name="capstoneClickMsg">Capstone</string>
 </resources>
